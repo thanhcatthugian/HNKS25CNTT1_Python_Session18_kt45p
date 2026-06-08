@@ -74,7 +74,7 @@ def update_price(products_list):
                                 i["price"] = price
                                 break
             if not found:
-                print(f"Không tìm thấy sản phẩm có mã {new_id}!")
+                print(f"Không tìm thấy sản phẩm có mã [{new_id}]!")
             else:
                 print("Cập nhật giá thành công!")
                 break
@@ -105,7 +105,10 @@ while True:
             case 2:
                 add_product(products)
             case 3:
-                update_price(products)
+                if len(products)<=0:
+                    print("Cửa hàng hiện chưa có sản phẩm nào!")
+                else:
+                    update_price(products)
             case 4:
                 print("Cảm ơn bạn đã sử dụng phần mềm!\n"
                       "[Chương trình kết thúc]"
